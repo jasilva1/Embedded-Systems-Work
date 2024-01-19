@@ -1,0 +1,28 @@
+.global isPrimeAssembly //make isPrimeAssembly a global funcƟon
+isPrimeAssembly: 
+ mov x19, x0 // saving array address 
+ mov x20, x1 // saving prime address 
+ mov x21, x2 // saving composite address 
+ mov x22, x3 // Saving array length 
+ mov x23, #0 // Main loop counter 
+ mov x24, #0 // prime counter 
+ mov x25, #0 // composite counter 
+outer_loop: 
+ cmp x23, x22 // checking the end of the array 
+ b.ge end_outer_loop // if the end is reached end the loop 
+ ldr x26, [x19, x23, lsl #3] // current number from the array 
+ mov x0, x26 
+ bl isPrime // checking for prime number 
+ cbnz x0, is_prime // go to is_prime if it's prime 
+ // Not prime 
+ str x26, [x21, x25, lsl #3] // Store in composite array 
+add x25, x25, #1 // Next posiƟon in composite array
+b conƟnue_outer_loop
+is_prime: 
+ str x26, [x20, x24, lsl #3] // store in prime array 
+ add x24, x24, #1 // next posiƟon in prime array
+conƟnue_outer_loop:
+add x23, x23, #1 // Next posiƟon in the main array
+ b outer_loop //goes to the loop start 
+end_outer_loop: 
+ ret //Return
