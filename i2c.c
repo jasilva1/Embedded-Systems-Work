@@ -1,10 +1,4 @@
-//
 //  i2c.c
-//  
-//
-//  Created by NullWolf on 09/07/17.
-//  Copyright © 2017 NullWolf. All rights reserved.
-//
 
 
 #include <avr/io.h>
