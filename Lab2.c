@@ -1,11 +1,12 @@
 // ECE231 Lab Assignment #2
 //Joshua Silva
 //33435438
+// Using temperature sensor displays the temperature on LED Matrix, uses a button to switch between displaying Fahrenheit and Celsius
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include <string.h>      // strlen() function
-#include <stdlib.h>      // itoa() function
+#include <string.h>
+#include <stdlib.h>
 #define PERSISTENCE 5
 #define COUNTTIME 200     // # time between counts (ms)
 #define Vref 1.1
