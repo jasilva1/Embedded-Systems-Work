@@ -64,4 +64,3 @@ void timer0_init(){
     TCCR0B = 5;     // Divide clock by 1024
     TCNT0=0;        // Start the timer at 0
 }
-//End File//
