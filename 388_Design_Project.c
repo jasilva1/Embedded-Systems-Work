@@ -27,7 +27,7 @@ double calculate_temp(unsigned int Vout);
 void adc_init(void);
 unsigned int get_adc(void);
 
-// Display occupancy level on OLED
+// OLED Display
 void disp_info(int occupancy, double temperature, float distance1, float distance2){
     OLED_GoToLine(0);
     OLED_DisplayString("Occupancy: ");
